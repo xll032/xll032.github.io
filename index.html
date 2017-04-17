@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
     <title>主页</title>
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
 </head>
 <style>
     body,html{
         margin:0;
         padding:0;
-        font-size:64px;
         font-family: '微软雅黑',sans-serif;
     }
     .nav{
@@ -18,11 +18,14 @@
     }
 </style>
 <body>
-    <div class="nav">
+    <nav>
         <div>文档</div>
-    </div>
+        <a href="plugin/cityQuery/demo.html">城市查询</a>
+    </nav>
 </body>
 <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+<script src="//cdn.bootcss.com/angular.js/1.6.3/angular.min.js"></script>
 <script>
     $.ajax({
         url:'article/article.json',
@@ -31,7 +34,7 @@
             for(var i in data){
                 html += '<a href="javascript:void(0);">'+data[i].title+'</a>';
             }
-            $('.nav').append(html);
+            $('nav').append(html);
             $('a').each(function(i,e){
                 $(e).on('click',function(){
                     location.href = 'article/article.html?id='+((i>>0)+1);
