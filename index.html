@@ -2,21 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
     <title>主页</title>
 </head>
+<style>
+    body,html{
+        margin:0;
+        padding:0;
+        font-size:64px;
+        font-family: '微软雅黑',sans-serif;
+    }
+    .nav{
+        width:50%;
+        margin:0 auto;
+    }
+</style>
 <body>
-    Hello,world.
-    <a href="javascript:void(0);">文章</a>
+    <div class="nav">
+        <div>文档</div>
+    </div>
 </body>
 <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 <script>
-    document.getElementsByTagName('a')[0].addEventListener('click',function(){
-        window.location.href = 'article/article.html?id=1';
-    },false);
     $.ajax({
         url:'article/article.json',
         success:function(data){
-            console.log(data);
+            var html = '';
+            for(var i in data){
+                html += '<a href="javascript:void(0);">'+data[i].title+'</a>';
+            }
+            $('.nav').append(html);
+            $('a').each(function(i,e){
+                $(e).on('click',function(){
+                    location.href = 'article/article.html?id='+((i>>0)+1);
+                });
+            });
         }
     });
 </script>

@@ -7,4 +7,27 @@
 <body>
     <a href="javascript:history.go(-1);">返回</a>
 </body>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+    var href = location.href;
+    var id = href.substring(href.indexOf('?')+4);
+    $.ajax({
+        url:'article.json',
+        success:function(data){
+            var res = data[id],code,word;
+            for(var i in res.word){
+                word +=res.word[i];
+            }
+            for(i in res.code){
+                code +=res.code[i];
+            }
+            $('body').append('' +
+                    '<div>标题：'+res.title+'</div>' +
+                    '<div>分类：'+res.type+'</div>' +
+                    '<div>时间：'+res.time+'</div>' +
+                    '<div>内容'+word+'</div>' +
+                    '<div>代码块'+code+'</div>');
+        }
+    });
+</script>
 </html>
