@@ -12,35 +12,36 @@
         padding:0;
         font-family: '微软雅黑',sans-serif;
     }
-    .nav{
+    article{
         width:50%;
         margin:0 auto;
+        min-width:600px;
     }
 </style>
 <body>
-    <nav>
+    <article>
         <div>文档</div>
         <a href="plugin/cityQuery">城市查询</a>
-    </nav>
+    </article>
 </body>
 <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/angular.js/1.6.3/angular.min.js"></script>
+<script src="public/articleData.js"></script>
 <script>
-    $.ajax({
-        url:'article/article.json',
-        success:function(data){
-            var html = '';
-            for(var i in data){
-                html += '<a href="javascript:void(0);">'+data[i].title+'</a>';
-            }
-            console.log(html);
-            $('nav').append(html);
-            $('a').each(function(i,e){
-                $(e).on('click',function(){
-                    location.href = 'article/article.html?id='+((i>>0)+1);
-                });
-            });
+    function createList(){
+        var html = '';
+        for(var i in AllData){
+            html += '<div><a href="javascript:void(0);">'+AllData[i].title+'</a></div>';
         }
-    });
+        $('article').append(html);
+        $('a').each(function(i,e){
+            if(i){
+                $(e).on('click',function(){
+                    location.href = 'article/article.html?id='+((i>>0));
+                });
+            }
+        });
+    }
+    createList();
 </script>
 </html>
