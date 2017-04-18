@@ -294,14 +294,32 @@ var AllData = {
     ]
   },
   "22":{
-    "title":"preventDefault()",
+    "title":"preventDefault() 函数",
     "type":16,
     "time":"2016/11/7 15:44",
     "content":[
-      [0,""],
-      [0,""],
-      [0,""],
-      [0,""]
+      [0,"preventDefault() 函数的功能是阻止浏览器的默认行为"],
+      [0,"实例说明："],
+      [1,"&lt;a href = \"http://www.baidu.com\" target=\"_blank\">"],
+      [1,space+"&lt;div class=\"panel panel-default\">"],
+      [1,space+space+"&lt;span onclick=click()>编辑&lt;/span>"],
+      [1,space+space+"&lt;!--内容-->"],
+      [1,space+"&lt;/div>"],
+      [1,"&lt;/a>"],
+      [1,"&lt;script>"],
+      [1,space+"var click = function(){"],
+      [1,space+space+"console.log('我要被编辑了！')"],
+      [1,space+"}"],
+      [1,"&lt;/script>"],
+      [0,"在上面 a 包裹的情况下，点击 div 中的任何内容都会触发跳转，会导致“编辑”的点击出问题。"],
+      [0,"这时，就需要使用 preventDefault() 来阻止浏览器的默认行为"],
+      [0,"将点击函数做如下修改："],
+      [1,"&lt;script>"],
+      [1,space+"var clickEdit = function(e){"],
+      [1,space+space+"e.preventDefault;"],
+      [1,space+space+"console.log('我要被编辑了！')"],
+      [1,space+"}"],
+      [1,"&lt;/script>"]
     ]
   },
   "23":{
@@ -309,10 +327,34 @@ var AllData = {
     "type":16,
     "time":"2016/11/14 14:50",
     "content":[
-      [0,""],
-      [0,""],
-      [0,""],
-      [0,""]
+      [0,"当点击一个 button 按钮（或其他元素）后，需要跳转页面。除了使用"],
+      [0,"<code>&lt;a href=\"//www.xxxx.com\">链接&lt;/a></code>以外，也可以用 JS："],
+      [1,"&lt;button onclick=\"click()\">点击我&lt;/button>"],
+      [1,"&lt;script>"],
+      [1,space+"var click = function(){window.open('这里是url');}"],
+      [1,"&lt;/script>"],
+      [0,"这样并不能满足所有的需求，有时候可能需要在 ajax 回调之后再进行相应的跳转。"],
+      [0,"由于浏览器对回调之后打开窗口有一个安全机制，例如请求一个数据以后，跳转到一个不安全的页面之类的，所以回调后会阻止跳转。并且这个动作是浏览器默认的"],
+      [0,"如果要让它能起作用，除非用户设置了“不对js进行安全拦截”，用户不会这么做的，我自己都不会这么做。"],
+      [0,"这个时候，并不是没有办法解决，有如下 2 种解决方案（方便起见，ajax写法使用的是jQuery，解决的方法都能适用）："],
+      [0,"1、将一个 window.open() 存入一个变量，先打开该页面，回调后将其改为指定页面。这样可以避免回调后被阻止。"],
+      [0,"缺点：网速再快也会事先打开一个空白页面，再进行跳转，用户体验不太好。网速如果慢的话，就……"],
+      [1,"&lt;script>"],
+      [1,space+"var _newLink = window.open('about:blank');"],
+      [1,space+"$.ajax({"],
+      [1,space+space+"..."],
+      [1,space+space+"success:function(data){"],
+      [1,space+space+space+"_newLink.location.href = 'ajax传入的url';"],
+      [1,space+space+"}"],
+      [1,space+"});"],
+      [1,"&lt;/script>"],
+      [0,"2、将 ajax 改成同步请求，也可以正常跳转。不会有第 1 种情况的空白页跳出，用户体验尚可"],
+      [0,"倘若这个办法是万能的，那还有其他方法什么事。所以，它也有缺点：ajax 设置为同步请求，就失去了 ajax 设计的初衷，若服务器长时间不响应，代码卡死了"],
+      [0,"第 1 种和第 2 种方法需要进行权衡，对服务器放心可以用第 2 种，对浏览器不放心也不太在乎用户体验的话，可以用第 1 种"],
+      [0,"3、为什么会有第 3 种呢？其实是没有的。"],
+      [0,"说一下第 3 种的思路：设置一个定时器，在回调之后极短的时间内再打开页面。就怕网速不行，计时器时间到了，地址还没拿到"],
+      [0,"好在这种情况也不必太担心，因为就算定时器时间设置的再长，本质还是回调后打开页面，浏览器照样会阻止操作"],
+      [0,"既然脑洞大开的话，其实用 while(true) 循环直到url不为空的时候，跳转并跳出循环不就好啦。单线程的 JS 这么一搞，那就永远等待下去吧"]
     ]
   },
   "24":{
@@ -320,10 +362,8 @@ var AllData = {
     "type":512,
     "time":"2016/11/15 17:09",
     "content":[
-      [0,""],
-      [0,""],
-      [0,""],
-      [0,""]
+      [0,"这个，其实没什么好说的。比如 Chrome ，打开调试工具，清除 cookie 就好了。旧版在 resource 里，新版在 Application 里"],
+      [0,"其他的嘛，反正删掉缓存就可以了。要让账号变成未登录状态，可能需要在不刷新页面的前提下，删掉cookie。"]
     ]
   }
 };
