@@ -24,7 +24,6 @@
     </nav>
 </body>
 <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-<script src="//cdn.bootcss.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
 <script src="//cdn.bootcss.com/angular.js/1.6.3/angular.min.js"></script>
 <script>
     $.ajax({
@@ -34,6 +33,7 @@
             for(var i in data){
                 html += '<a href="javascript:void(0);">'+data[i].title+'</a>';
             }
+            console.log(html);
             $('nav').append(html);
             $('a').each(function(i,e){
                 $(e).on('click',function(){

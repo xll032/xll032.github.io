@@ -17,12 +17,47 @@
     $.ajax({
         url:'article.json',
         success:function(data){
-            var res = data[id],code,word;
+            var res = data[id],
+                    code,
+                    word,
+                    type;
             for(var i in res.word){
                 word +=res.word[i];
             }
             for(i in res.code){
                 code +=res.code[i];
+            }
+            switch(res.type){
+                case 1:
+                    type = 'jQuery';
+                    break;
+                case 2:
+                    type = 'AngularJS';
+                    break;
+                case 4:
+                    type = 'React';
+                    break;
+                case 8:
+                    type = 'Vue';
+                    break;
+                case 16:
+                    type = '原生JS';
+                    break;
+                case 32:
+                    type = 'CSS';
+                    break;
+                case 64:
+                    type = 'HTML';
+                    break;
+                case 128:
+                    type = '微信小程序';
+                    break;
+                case 256:
+                    type = '热门插件使用';
+                    break;
+                case 512:
+                    type = '其他';
+                    break;
             }
             $('body').append('' +
                     '<div>标题：'+res.title+'</div>' +
