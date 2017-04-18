@@ -20,30 +20,30 @@
 <script src="../public/articleData.js"></script>
 <script>
     function createContent(){
+        function switchType(type){
+            switch(type){
+                case 1:return 'jQuery';
+                case 2:return 'AngularJS';
+                case 4:return 'React';
+                case 8:return 'Vue';
+                case 16:return '原生JS';
+                case 32:return 'CSS';
+                case 64:return 'HTML';
+                case 128:return '微信小程序';
+                case 256:return '插件';
+                case 512:return '其他';
+            }
+        }
         var href = location.href;
         var id = href.substring(href.indexOf('?')+4);
         var res = AllData[id],
-                content='',
-                type;
+                content='';
         for(var i=0;i < res.content.length;i++){
             res.content[i][0]?(content +='<p><code>'+res.content[i][1]+'</code></p>'):(content +='<p>'+res.content[i][1]+'</p>');
-
-        }
-        switch(res.type){
-            case 1:type = 'jQuery';break;
-            case 2:type = 'AngularJS';break;
-            case 4:type = 'React';break;
-            case 8:type = 'Vue';break;
-            case 16:type = '原生JS';break;
-            case 32:type = 'CSS';break;
-            case 64:type = 'HTML';break;
-            case 128:type = '微信小程序';break;
-            case 256:type = '插件';break;
-            case 512:type = '其他';break;
         }
         $('.container').append(
                 '<div>标题：'+res.title+'</div>' +
-                '<div>分类：'+type+'</div>' +
+                '<div>分类：'+switchType(res.type)+'</div>' +
                 '<div>时间：'+res.time+'</div>' +
                 '<div>内容：'+content+'</div>'
                );
