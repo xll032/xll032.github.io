@@ -1,5 +1,5 @@
 var space = '&nbsp;&nbsp;&nbsp;&nbsp;';
-var AllDataLength = 9;
+var AllDataLength = 24;
 var AllData = {
   "1":{
     "title":"new Date() 兼容问题",
@@ -22,7 +22,7 @@ var AllData = {
     "content":[
         [0,"ios下会自动将10、11位号码识别，点击后会进入到拨号，并且颜色会变黑"],
         [0,"注：该问题仅在iPhone手机上运行web时才会出现，PC端无法检查到该问题"],
-        [1,"&lt;meta name = \"format-detection\" content = \"telephone=no\">"],
+        [1,"<span class='arrow'>&lt;</span><span class='tag'>meta</span> <span class='attr'>name=</span><span class='str'>\"format-detection\"</span> <span class='attr'>content=</span><span class='str'>\"telephone=no\"</span><span class='arrow'>/></span>"],
         [0,"添加此标签后，该问题可完美解决"]
     ]
   },
@@ -47,13 +47,13 @@ var AllData = {
         [0,"Don't use for...in for arrays. It's best to use the traditional for loop in that case."],
         [0,"The reason is because for...in looks at the array as an object, and therefore properties likeindexOf or length may be included in the loop. The normal for loop only deals with numeric keys,so this problem is avoided."],
         [0,"On a side note, unwanted properties could show up when iterating over plain objects as well(as others have noted, properties you add to the object's prototype will show up). You canget around this by writing your for...in loops this way:"],
-        [1,"var obj = { ... };"],
-        [1,"for (var prop in obj) {"],
-        [1,space+"if (obj.hasOwnProperty(prop)) {"],
-        [1,space+space+"var item = obj[prop];"],
-        [1,space+space+"..."],
-        [1,space+"}"],
-        [1,"}"],
+        [3,"<span class='key'>var</span> <span class='param'>obj</span> <span class='key'>=</span> <span class='flower'>{</span> <span class='word'>...</span> <span class='flower'>}</span><span class='word'>;</span>"],
+        [3,"<span class='key'>for</span> <span class='word'>(</span><span class='key'>var</span> <span class='param'>prop</span> <span class='key'>in</span> <span class='param'>obj</span><span class='word'>)</span> <span class='flower'>{</span>"],
+        [3,space+"<span class='key'>if</span><span class='word'>(</span><span class='param'>obj</span><span class='word'>.</span><span class='method'>hasOwnProperty</span><span class='word'>(</span><span class='param'>prop</span><span class='word'>))</span><span class='flower'>{</span>"],
+        [3,space+space+"<span class='key'>var</span> <span class='param'>item</span> <span class='key'>=</span> <span class='param'>obj</span><span class='word'>[</span><span class='param'>prop</span><span class='word'>];</span>   "],
+        [3,space+space+"<span class='word'>...</span>"],
+        [3,space+"<span class='flower'>}</span>"],
+        [1,"<span class='flower'>}</span>"],
         [0,"To be clear though: you still shouldn't use this method on arrays."]
     ]
   },
@@ -73,20 +73,20 @@ var AllData = {
     "time":"2016/10/9 11:07",
     "content":[
         [0,"使用计时器里面的this指向点击的元素的写法如下："],
-        [1,"$('#myElement').click(function() {"],
-        [1,space+"var that = this;"],
-        [1,space+"setTimeout(function() {"],
-        [1,space+space+"$(that).addClass('aNewClass');"],
-        [1,space+"}, 1000);"],
-        [1,"});"],
+        [3,"<span class='spe'>$</span><span class='word'>(</span><span class='str'>'</span><span class='key'>#myElement</span><span class='str'>'</span><span class='word'>).</span><span class='method'>click</span><span class='word'>(</span><span class='key'>function</span><span class='word'>()</span><span class='flower'>{</span>"],
+        [3,space+"<span class='key'>var</span> <span class='param'>that</span> <span class='key'>=</span> <span class='key'>this</span><span class='word'>;</span>"],
+        [3,space+"<span class='method'>setTimeout</span><span class='word'>(</span><span class='key'>function</span><span class='word'>()</span><span class='flower'>{</span>"],
+        [3,space+space+"<span class='spe'>$</span><span class='word'>(</span><span class='param'>that</span><span class='word'>).</span><span class='method'>addClass</span><span class='word'>(</span><span class='str'>'aNewClass'</span><span class='word'>);</span>"],
+        [3,space+"<span class='flower'>}</span><span class='word'>,</span><span class='word'>1000);</span>"],
+        [3,"<span class='flower'>}</span><span class='word'>);</span>"],
         [0,"在使用jQuery时，可以使用$.proxy(context,name)方法"],
         [0,"context可以是对象，函数等；name是传入的操作参数"],
         [0,"以上述方法为例："],
-        [1,"$('#myElement').click(function() {"],
-        [1,space+"setTimeout($.proxy(function() {"],
-        [1,space+space+"$(that).addClass('aNewClass');"],
-        [1,space+"},this), 1000);"],
-        [1,"});"],
+        [3,"<span class='spe'>$</span><span class='word'>(</span><span class='str'>'#myElement'</span><span class='word'>).</span><span class='method'>click</span><span class='word'>(</span><span class='key'>function</span><span class='word'>()</span><span class='flower'>{</span>"],
+        [3,space+"<span class='method'>setTimeout</span><span class='word'>(</span><span class='spe'>$</span><span class='word'>.</span><span class='method'>proxy</span><span class='word'>(</span><span class='key'>function</span><span class='word'>()</span><span class='flower'>{</span>"],
+        [3,space+space+"<span class='spe'>$</span><span class='word'>(</span><span class='key'>that</span><span class='word'>).</span><span class='method'>addClass</span><span class='word'>(</span><span class='str'>'aNewClass'</span><span class='word'>);</span>"],
+        [3,space+"<span class='flower'>}</span><span class='word'>,</span><span class='key'>this</span><span class='word'>),</span><span class='word'>1000);</span>"],
+        [3,"<span class='flower'>}</span><span class='word'>);</span>"],
         [0,"修改属性的时候也可以使用。BTW：感觉还是用 var that = this；舒服"]
     ]
   },
@@ -122,8 +122,8 @@ var AllData = {
     "content":[
         [0,".remove() 方法的确将元素从 DOM 树中移除了，但该方法本身的返回值就是这个元素的信息，"],
         [0,"即用以下方法可以找回删除的节点"],
-        [1,"var ele = $('.removeEle').remove(); //移除"],
-        [1,"$('.parent').append(ele) //重新添加"]
+        [3,"<span class='key'>var</span> <span class='param'>ele</span> <span class='key'>=</span> <span class='spe'>$</span><span class='word'>(</span><span class='str'>'</span><span class='word'>.</span><span class='key'>removeEle</span><span class='str'>'</span><span class='word'>).</span><span class='method'>remove</span><span class='word'>();</span><span class='com'>//移除</span> "],
+        [3,"<span class='spe'>$</span><span class='word'>(</span><span class='str'>'</span><span class='word'>.</span><span class='key'>parent</span><span class='str'>'</span><span class='word'>).</span><span class='method'>append</span><span class='word'>(</span><span class='param'>ele</span><span class='word'>)</span><span class='com'>//重新添加</span>"]
     ]
   },
   "10":{
@@ -151,7 +151,11 @@ var AllData = {
     "type":32,
     "time":"2016/10/17 9:56",
     "content":[
-      [0,"要使属性 <code>div{height:100%}</code> 能够生效，需在父级上设置一个高度，必须是一个数值。"],
+      [0,"要使以下属性能够生效，需在父级上设置一个高度，必须是一个数值。"],
+      [0,"CSS："],
+      [1,"<span class='key'>.parent div</span><span class='flower'>{</span><span class='fun'>height</span><span class='word'>:</span><span class='str'>100%</span><span class='flower'>}</span>"],
+      [1,"<span class='key'>.parent</span><span class='flower'>{</span><span class='fun'>height</span><span class='word'>:</span><span class='str'>200px;</span><span class='flower'>}</span>"],
+      [0,""],
       [0,"否则 100% 得到的是0 。事实上width属性也是这样的，只不过在没有设置的情况下，宽度是容器宽度（body宽度默认是屏幕宽度），而高度默认都是0"]
     ]
   },
@@ -161,8 +165,17 @@ var AllData = {
     "time":"2016/10/17 10:38",
     "content":[
       [0,"使用 text-overflow，属性值：clip（默认，切掉多余部分）、ellipsis（溢出后显示省略号）"],
-      [0,"该属性单独使用无效，需配合以下属性：<code>.element{overflow:hidden;white-space:nowrap;width:50%;}/*宽度随意设定*/</code>"],
-      [0,"除此之外，只有块元素才能生效，即对行级元素需将 display 设置为 block 或 inline-block"]
+      [0,"只有块元素才能生效，即对行级元素需将 display 设置为 block 或 inline-block。此外，还需配合一些其他的属性。代码如下："],
+      [0,"CSS："],
+      [1,"<span class=''></span><span class=''></span>.element{"],
+      [1,space+"<span class='fun'>overflow</span><span class='word'>:</span><span class='str'>hidden</span><span class='word'>;</span>"],
+      [1,space+"<span class='fun'>white-space</span><span class='word'>:</span><span class='str'>nowrap</span><span class='word'>;</span>"],
+      [1,space+"<span class='fun'>width</span><span class='word'>:</span><span class='str'>50%</span><span class='word'>;</span><span class='com'>/*宽度随意设定*/</span>"],
+      [1,space+"<span class='fun'>-ms-text-overflow</span><span class='word'>:</span><span class='str'>ellipsis</span><span class='word'>;</span></span>"],
+      [1,space+"<span class='fun'>text-overflow</span><span class='word'>:</span><span class='str'>ellipsis</span><span class='word'>;</span></span>"],
+      [1,space+"<span class='fun'>display</span><span class='word'>:</span><span class='str'>inline-block</span><span class='word'>;</span><span class='com'>/*块级元素无需设定*/</span>"],
+      [1,"<span class='flower'>}</span>"],
+      [0,"除此之外，"]
     ]
   },
   "14":{
@@ -214,21 +227,25 @@ var AllData = {
     "type":1,
     "time":"2016/10/20 16:59",
     "content":[
-      [0,"使用方法有两种：<code>$.each('element',function(i,e){ ... });</code>或者<code>$('element').each(function(i,e){ ... });</code>"],
+      [0,"使用方法有以下两种写法："],
+      [0,"JS："],
+      [1,"<span class='spe'>$</span><span class='word'>.</span><span class='method'>each</span><span class='word'>(</span><span class='str'>'element'</span><span class='word'>,</span><span class='key'>function</span><span class='word'>(i,e)</span><span class='flower'>{</span><span class='word'> ... </span><span class='flower'>}</span><span class='word'>);</span>"],
+      [1,"<span class='spe'>$</span><span class='word'>(</span><span class='str'>'element'</span><span class='word'>).</span><span class='method'>each</span><span class='word'>(</span><span class='key'>function</span><span class='word'>(i,e)</span><span class='flower'>{</span><span class='word'> ... </span><span class='flower'>}</span><span class='word'>);</span>"],
       [0,"i 表示当前元素的下标，e 表示相应的dom元素。这里不详细说明"],
       [0,"现有一个需求，找到符合条件的值之后，就跳出循环。这时，使用 break 和 continue 只能跳出本次循环。"],
       [0,"在 each() 函数中，break => return false （跳出所有循环）；continue => return true （跳出当前循环，进入下一个循环）"],
-      [0,"如此看来，不能直接返回一个想要的值，需要将 each() 封装成一个函数，引入一个外部变量辅助。见下例："],
-      [1,"function test(){"],
-      [1,space+"var temp = 'not found';"],
-      [1,space+"$('element').each(function(){"],
-      [1,space+space+"if(...){"],
-      [1,space+space+space+"temp = 'found';"],
-      [1,space+space+space+"return false;"],
-      [1,space+space+"}"],
-      [1,space+"});"],
-      [1,space+"return temp;"],
-      [1,"}"]
+      [0,"如此看来，不能直接返回一个想要的值，需要将 each() 封装成一个函数，引入一个外部变量辅助。"],
+      [0,"JS："],
+      [3,"<span class='key'>function</span> <span class='fun'>test</span><span class='word'>()</span><span class='flower'>{</span>"],
+      [3,space+"<span class='key'>var</span> <span class='param'>temp</span> <span class='key'>=</span> <span class='str'>'not found'</span><span class='word'>;</span>"],
+      [3,space+"<span class='spe'>$</span><span class='word'>(</span><span class='str'>'element'</span><span class='word'>).</span><span class='method'>each</span><span class='word'>(</span><span class='key'>function</span><span class='word'>()</span><span class='flower'>{</span>"],
+      [3,space+space+"<span class='key'>if</span><span class='word'>(</span><span class='spe'>$</span><span class='word'>(e).</span><span class='method'>text</span><span class='word'>()</span><span class='key'></span>==<span class='word'>1)</span><span class='flower'>{</span>"],
+      [3,space+space+space+"<span class='param'>temp</span> <span class='key'>=</span> <span class='str'>'found'</span><span class='word'>;</span>"],
+      [3,space+space+space+"<span class='key'>return</span> <span class='key'>false</span><span class='word'>;</span>"],
+      [3,space+space+"<span class='flower'>}</span>"],
+      [3,space+"<span class='flower'>}</span><span class='word'>);</span>"],
+      [3,space+"<span class='key'>return</span> <span class='param'>temp</span><span class='word'>;</span>"],
+      [3,"<span class='flower'>}</span>"]
     ]
   },
   "17":{
@@ -249,10 +266,10 @@ var AllData = {
       [1,"&lt;div>2222&lt;/div> // => 输出1"],
       [1,"&lt;div>3333&lt;/div> // => 输出2"],
       [0,"使用以下代码可得到此效果："],
-      [1,"$('body').on('click','div',function(){"],
-      [1,space+"var _index = $('h4').index($(this));//得到的是当前元素在符合条件的元素集的下标（从 0 开始）"],
-      [1,space+"console.log(_index);//跟上面一样的结果"],
-      [1,"});"]
+      [3,"$('body').on('click','div',function(){"],
+      [3,space+"var _index = $('h4').index($(this));//得到的是当前元素在符合条件的元素集的下标（从 0 开始）"],
+      [3,space+"console.log(_index);//跟上面一样的结果"],
+      [3,"});"]
     ]
   },
   "19":{
@@ -300,26 +317,26 @@ var AllData = {
     "content":[
       [0,"preventDefault() 函数的功能是阻止浏览器的默认行为"],
       [0,"实例说明："],
+      [0,"HTML："],
       [1,"&lt;a href = \"http://www.baidu.com\" target=\"_blank\">"],
       [1,space+"&lt;div class=\"panel panel-default\">"],
       [1,space+space+"&lt;span onclick=click()>编辑&lt;/span>"],
       [1,space+space+"&lt;!--内容-->"],
       [1,space+"&lt;/div>"],
       [1,"&lt;/a>"],
-      [1,"&lt;script>"],
-      [1,space+"var click = function(){"],
-      [1,space+space+"console.log('我要被编辑了！')"],
-      [1,space+"}"],
-      [1,"&lt;/script>"],
+      [0,"JS："],
+      [3,space+"var click = function(){"],
+      [3,space+space+"console.log('我要被编辑了！')"],
+      [3,space+"}"],
       [0,"在上面 a 包裹的情况下，点击 div 中的任何内容都会触发跳转，会导致“编辑”的点击出问题。"],
       [0,"这时，就需要使用 preventDefault() 来阻止浏览器的默认行为"],
       [0,"将点击函数做如下修改："],
-      [1,"&lt;script>"],
-      [1,space+"var clickEdit = function(e){"],
-      [1,space+space+"e.preventDefault;"],
-      [1,space+space+"console.log('我要被编辑了！')"],
-      [1,space+"}"],
-      [1,"&lt;/script>"]
+      [0,"JS："],
+      [3,space+"var clickEdit = function(e){"],
+      [3,space+space+"e.preventDefault;"],
+      [3,space+space+"console.log('我要被编辑了！')"],
+      [3,space+"}"],
+      [3,"&lt;/script>"]
     ]
   },
   "23":{
@@ -328,26 +345,25 @@ var AllData = {
     "time":"2016/11/14 14:50",
     "content":[
       [0,"当点击一个 button 按钮（或其他元素）后，需要跳转页面。除了使用"],
-      [0,"<code>&lt;a href=\"//www.xxxx.com\">链接&lt;/a></code>以外，也可以用 JS："],
+      [0,"<code>&lt;a href=\"//www.xxxx.com\">链接&lt;/a></code>以外，也可以用 JS控制："],
+      [0,"HTML："],
       [1,"&lt;button onclick=\"click()\">点击我&lt;/button>"],
-      [1,"&lt;script>"],
-      [1,space+"var click = function(){window.open('这里是url');}"],
-      [1,"&lt;/script>"],
+      [0,"JS："],
+      [3,"var click = function(){window.open('这里是url');}"],
       [0,"这样并不能满足所有的需求，有时候可能需要在 ajax 回调之后再进行相应的跳转。"],
       [0,"由于浏览器对回调之后打开窗口有一个安全机制，例如请求一个数据以后，跳转到一个不安全的页面之类的，所以回调后会阻止跳转。并且这个动作是浏览器默认的"],
       [0,"如果要让它能起作用，除非用户设置了“不对js进行安全拦截”，用户不会这么做的，我自己都不会这么做。"],
       [0,"这个时候，并不是没有办法解决，有如下 2 种解决方案（方便起见，ajax写法使用的是jQuery，解决的方法都能适用）："],
       [0,"1、将一个 window.open() 存入一个变量，先打开该页面，回调后将其改为指定页面。这样可以避免回调后被阻止。"],
       [0,"缺点：网速再快也会事先打开一个空白页面，再进行跳转，用户体验不太好。网速如果慢的话，就……"],
-      [1,"&lt;script>"],
-      [1,space+"var _newLink = window.open('about:blank');"],
-      [1,space+"$.ajax({"],
-      [1,space+space+"..."],
-      [1,space+space+"success:function(data){"],
-      [1,space+space+space+"_newLink.location.href = 'ajax传入的url';"],
-      [1,space+space+"}"],
-      [1,space+"});"],
-      [1,"&lt;/script>"],
+      [0,"JS："],
+      [3,"var _newLink = window.open('about:blank');"],
+      [3,"$.ajax({"],
+      [3,space+"..."],
+      [3,space+"success:function(data){"],
+      [3,space+space+"_newLink.location.href = 'ajax传入的url';"],
+      [3,space+"}"],
+      [3,"});"],
       [0,"2、将 ajax 改成同步请求，也可以正常跳转。不会有第 1 种情况的空白页跳出，用户体验尚可"],
       [0,"倘若这个办法是万能的，那还有其他方法什么事。所以，它也有缺点：ajax 设置为同步请求，就失去了 ajax 设计的初衷，若服务器长时间不响应，代码卡死了"],
       [0,"第 1 种和第 2 种方法需要进行权衡，对服务器放心可以用第 2 种，对浏览器不放心也不太在乎用户体验的话，可以用第 1 种"],

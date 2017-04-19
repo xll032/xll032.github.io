@@ -1,0 +1,68 @@
+pre.code{
+    background: #fdf6e3;
+    /*white-space: pre-wrap;
+    word-wrap: break-word;*/
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+    -webkit-box-shadow: 0 0 2px 1px #ddd;
+    -moz-box-shadow: 0 0 2px 1px #ddd;
+    box-shadow: 0 0 2px 1px #ddd;
+    padding:6px;
+}
+
+/*字符串，html、css、js通用*/
+pre.code span.str{
+    color: #2aa198;
+}
+/*方法（html用的，）、js内置函数*/
+pre.code span.method{
+    color: #7a7a43;
+}
+/*自定义函数及调用、css属性名称*/
+pre.code span.fun{
+    color: #b58900;
+}
+/*标签名*/
+pre.code span.tag{
+    color: #4c8ad1;
+}
+/*一般文字。html标签内容、js括号 形参 分号*/
+pre.code span.word{
+    color: #586e75;
+}
+/*html的箭头 </ >*/
+pre.code span.arrow{
+    color: #839496;
+}
+/*html标签的属性名称*/
+pre.code span.attr{
+    color: #93a1a1;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+/*注释*/
+pre.code span.com{
+    color: #93a1a1;
+}
+/*js关键词*/
+pre.code span.key{
+    color: #859900;
+}
+/*js全局变量*/
+pre.code span.globe{
+    color: #660e7a;
+    font-weight:bold;
+}
+/*特殊的符号 例如 $、window.location.href 等*/
+pre.code span.spe{
+    color: #6c71c4;
+}
+/*变量名，及变量的使用*/
+pre.code span.param{
+    color: #458383;
+}
+/*花括号*/
+pre.code span.flower{
+    color: #dc322f;
+}
