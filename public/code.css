@@ -11,7 +11,7 @@ pre.code{
     padding:6px;
 }
 
-/*字符串，html、css、js通用*/
+/*字符串，html、css、js通用 css除颜色外的其他都属于str*/
 pre.code span.str{
     color: #2aa198;
 }
@@ -45,7 +45,7 @@ pre.code span.attr{
 pre.code span.com{
     color: #93a1a1;
 }
-/*js关键词*/
+/*js关键词（ var function = true false 等） css属性名、颜色*/
 pre.code span.key{
     color: #859900;
 }
@@ -54,7 +54,7 @@ pre.code span.globe{
     color: #660e7a;
     font-weight:bold;
 }
-/*特殊的符号 例如 $、window.location.href 等*/
+/*特殊的符号 例如 $、window.location.href、对象中的键名 等*/
 pre.code span.spe{
     color: #6c71c4;
 }
@@ -62,7 +62,11 @@ pre.code span.spe{
 pre.code span.param{
     color: #458383;
 }
-/*花括号*/
+/*花括号 {} */
 pre.code span.flower{
     color: #dc322f;
+}
+/*方括号 []*/
+pre.code span.rect{
+    color: #1c8bd2;
 }
