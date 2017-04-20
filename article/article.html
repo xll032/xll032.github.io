@@ -36,8 +36,7 @@
             }
         }
         function codeStyle(type,content){
-            console.log(type);
-            console.log(content.match(/(&lt;)([\s\S]*)(\>?)/g));
+            //console.log(content.match(/(&lt;)([\s\S]*)(\>?)/g));
             return content;
         }
         var href = location.href;
@@ -55,7 +54,6 @@
             var _this = res.content[i][1],
             _part = res.content[i][0];
             if(_part&&!codeShow){
-                console.log(codeStyle(_part,_this));
                 content += '<pre class="code">' + _this + '<br>';
                 codeShow = true;
             }else if(_part&&codeShow){

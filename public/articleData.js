@@ -1,5 +1,5 @@
 var space = '&nbsp;&nbsp;&nbsp;&nbsp;';
-var AllDataLength = 24;
+
 var AllData = {
   "1":{
     "title":"new Date() 兼容问题",
@@ -395,18 +395,45 @@ var AllData = {
       [0,"这个，其实没什么好说的。比如 Chrome ，打开调试工具，清除 cookie 就好了。旧版在 resource 里，新版在 Application 里"],
       [0,"其他的嘛，反正删掉缓存就可以了。要让账号变成未登录状态，可能需要在不刷新页面的前提下，删掉cookie。"]
     ]
+  },
+  "25":{
+    "title":"Button 按钮之间存在小间距",
+    "type":32,
+    "time":"2016/11/15 17:28",
+    "content":[
+      [0,"由于 Button 本身就是inline-block，所以排列起来会有一个小间距，下面介绍的方法可以用于将 inline-block 的元素之间的小间隙去掉"],
+      [0,"1、将元素连在一行书写"],
+      [0,"HTML："],
+      [1,"<span class='arrow'>&lt;</span><span class='tag'>button</span><span class='arrow'>></span><span class='word'>1111</span><span class='arrow'>&lt;/</span><span class='tag'>button</span><span class='arrow'>></span><span class='arrow'>&lt;</span><span class='tag'>button</span><span class='arrow'>></span><span class='word'>2222</span><span class='arrow'>&lt;/</span><span class='tag'>button</span><span class='arrow'>></span><span class='arrow'>&lt;</span><span class='tag'>button</span><span class='arrow'>></span><span class='word'>3333</span><span class='arrow'>&lt;/</span><span class='tag'>button</span><span class='arrow'>></span>"],
+      [0,"但是连在一起代码就比较难读了，下面介绍三种换行仍能回避换行符的方法。"],
+      [0,"HTML："],
+      [1,"<span class='com'>/* 1、结束标签换行 */</span><br><span class='arrow'>&lt;</span><span class='tag'>button</span><span class='arrow'>></span><span class='word'>1111</span><br><span class='arrow'>&lt;/</span><span class='tag'>button</span><span class='arrow'>></span><span class='arrow'>&lt;</span><span class='tag'>button</span><span class='arrow'>></span><span class='word'>2222</span><br><span class='arrow'>&lt;/</span><span class='tag'>button</span><span class='arrow'>></span><span class='arrow'>&lt;</span><span class='tag'>button</span><span class='arrow'>></span><span class='word'>3333</span><span class='arrow'>&lt;/</span><span class='tag'>button</span><span class='arrow'>></span><br>" +
+        "<span class='com'>/* 2、最后一个“>”符号换行 */</span><br><span class='arrow'>&lt;</span><span class='tag'>button</span><span class='arrow'>></span><span class='word'>1111</span><span class='arrow'>&lt;/</span><span class='tag'>button</span><br><span class='arrow'>></span><span class='arrow'>&lt;</span><span class='tag'>button</span><span class='arrow'>></span><span class='word'>2222</span><span class='arrow'>&lt;/</span><span class='tag'>button</span><br><span class='arrow'>></span><span class='arrow'>&lt;</span><span class='tag'>button</span><span class='arrow'>></span><span class='word'>3333</span><span class='arrow'>&lt;/</span><span class='tag'>button</span><span class='arrow'>></span><br>" +
+        "<span class='com'>/* 3、利用注释换行 */</span><br><span class='arrow'>&lt;</span><span class='tag'>button</span><span class='arrow'>></span><span class='word'>1111</span><span class='arrow'>&lt;/</span><span class='tag'>button</span><span class='arrow'>></span><span class='com'>&lt;!--<br>--></span><span class='arrow'>&lt;</span><span class='tag'>button</span><span class='arrow'>></span><span class='word'>2222</span><span class='arrow'>&lt;/</span><span class='tag'>button</span><span class='arrow'>></span><span class='com'>&lt;!--<br>--></span><span class='arrow'>&lt;</span><span class='tag'>button</span><span class='arrow'>></span><span class='word'>3333</span><span class='arrow'>&lt;/</span><span class='tag'>button</span><span class='arrow'>></span><br>"+
+        "<span class='com'>/* 4、不写闭合标签（H5中甚至最后一个都可以不写，但是在IE6/IE7下必须要加） */</span><br><span class='arrow'>&lt;</span><span class='tag'>button</span><span class='arrow'>></span><span class='word'>1111</span><br><span class='arrow'>&lt;</span><span class='tag'>button</span><span class='arrow'>></span><span class='word'>2222</span><br><span class='arrow'>&lt;</span><span class='tag'>button</span><span class='arrow'>></span><span class='word'>3333</span><span class='arrow'>&lt;/</span><span class='tag'>button</span><span class='arrow'>></span>"
+      ],
+      [0,"2、给 margin 负值<br>这个负值的大小与上下文的字体和文字大小相关，需要进行很多调试。这里有一个之前看到的一个博客文章，写的很不错。不过我觉得这个方法似乎是麻烦了点。这里是传送门，可以学习学习：<a href='http://www.zhangxinxu.com/wordpress/?p=1194'>好文章分享</a>"],
+      []
+    ]
   }
 };
 var blank = {
   "":{
     "title":"",
-    "type":1,
-    "time":"",
+    "type":32,
+    "time":"2016/11/15 17:28",
     "content":[
       [0,""],
-      [1,""],
       [0,""],
+      [0,""],
+      [1,"<span class='arrow'>&lt;</span><span class='tag'>button</span><span class='arrow'>></span><span class='word'>1111</span><span class='arrow'>&lt;/</span><span class='tag'>button</span><span class='arrow'>></span><span class='arrow'>&lt;</span><span class='tag'>button</span><span class='arrow'>></span><span class='word'>2222</span><span class='arrow'>&lt;/</span><span class='tag'>button</span><span class='arrow'>></span><span class='arrow'>&lt;</span><span class='tag'>button</span><span class='arrow'>></span><span class='word'>3333</span><span class='arrow'>&lt;/</span><span class='tag'>button</span><span class='arrow'>></span>"],
       [0,""]
     ]
   }
 };
+function Len(obj){
+  for(var i in obj){var l=i;}
+  return (l>>0);
+}
+
+var AllDataLength = Len(AllData);
