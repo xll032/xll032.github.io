@@ -54,7 +54,6 @@ app.controller('myCtrl',function( $scope ){
 		}
 		function _linkage(num,area){return cityQuery(num,area,'linkage');}
 		function _text(ar,area){ var _this = document.getElementById(ar);return (ar==area) ? _this.options[_this.selectedIndex].innerText : _this.options[0].innerText;}
-
 		$scope.selectArea = [$scope.selectCou,pro+cit+cou];
 	};
 });

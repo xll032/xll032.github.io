@@ -41,36 +41,20 @@
         }
         var href = location.href;
         var id = (href.substring(href.indexOf('?')+4))>>0;
-        var res = AllData[id],
-                content='',
-                codeShow = false;
+        var res = AllData[id];
         id==1?$('#up').text('已经是第一篇'):$('#up').attr('href','article.html?id='+(id-1));
         id==AllDataLength?$('#down').text('已经是最后一篇'):$('#down').attr('href','article.html?id='+(id+1));
         if(res == void(0)){
             document.write('404 不存在对应的页面');
             return false
         }
-        for(var i=0;i < res.content.length;i++){
-            var _this = res.content[i][1],
-            _part = res.content[i][0];
-            if(_part&&!codeShow){
-                content += '<pre class="code">' + _this + '<br>';
-                codeShow = true;
-            }else if(_part&&codeShow){
-                content += _this + '<br>';
-            }else if(!_part&&codeShow){
-                content += '</pre>'+ _this;
-                codeShow = false;
-            }else{
-                content += '<p>' + _this + '</p>';
-            }
-        }
         $('.container').append(
                 '<div>标题：'+res.title+'</div>' +
                 '<div>分类：'+switchType(res.type)+'</div>' +
                 '<div>时间：'+res.time+'</div>' +
-                '<div>内容：'+content+'</div>'
+                '<div>内容：'+res.content+'</div>'
                );
+        jQuery.fn.visible = function(){};
     }
     createContent();
 

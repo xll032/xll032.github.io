@@ -20,42 +20,12 @@
     }
 </style>
 <body>
-    <button onclick='click()'></button>
     <article class="doc">
         <div>文档</div>
     </article>
     <article>
         <div>小玩意儿</div>
     </article>
-    <div style="width:50%;margin: 0 auto;">
-        代码风格<br>
-        <pre class="code">
-        <span class="attr">&lt;</span><span class="tag">a</span> <span class="attr">href = </span><span class="str">"http://www.baidu.com"</span> <span class="attr">target=</span><span class="str">"_blank"</span>>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="arrow">&lt;</span><span class="tag">div</span> <span class="attr">class=</span><span class="str">"panel panel-default"</span><span class="arrow">></span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="arrow">&lt;</span><span class="tag">span</span> <span class="attr">onclick=</span><span class="str">"</span><span class="method">click()</span><span class="str">"</span><span class="arrow">></span><span class="word">编辑</span><span class="arrow">&lt;/</span><span class="tag">span</span><span class="arrow">></span>
-        <span class="arrow">&lt;/</span><span class="tag">a</span><span class="arrow">></span>
-        <span class="arrow">&lt;</span><span class="tag">script</span><span class="arrow">></span>
-        &nbsp;&nbsp;&nbsp;&nbsp;<span class="key">var</span> <span class="param">click</span> <span class="key">=</span> <span class="key">function</span><span class="word">()</span><span class="flower">{</span>
-        <span class="key">function</span> <span class="fun">createList</span><span class="word">()</span><span class="flower">{</span>
-        <span class="key">function</span> <span class="fun">switchType</span><span class="word">(type)</span><span class="flower">{</span>
-            <span class="key">switch</span><span class="word">(type)</span><span class="flower">{</span>
-                <span class="key">case</span> <span class="word">1</span><span class="str">:</span><span class="key">return</span> <span class="str">'【jQuery】'</span><span class="word">;</span>
-                <span class="key">case</span> <span class="word">2</span><span class="str">:</span><span class="key">return</span> <span class="str">'【AngularJS】'</span><span class="word">;</span>
-                <span class="key">case</span> <span class="word">4</span><span class="str">:</span><span class="key">return</span> <span class="str">'【React】'</span><span class="word">;</span>
-                <span class="key">case</span> <span class="word">8</span><span class="str">:</span><span class="key">return</span> <span class="str">'【Vue】'</span><span class="word">;</span>
-                <span class="key">case</span> <span class="word">16</span><span class="str">:</span><span class="key">return</span> <span class="str">'【原生JS】'</span><span class="word">;</span>
-                <span class="key">case</span> <span class="word">32</span><span class="str">:</span><span class="key">return</span> <span class="str">'【CSS】'</span><span class="word">;</span>
-                <span class="key">case</span> <span class="word">64</span><span class="str">:</span><span class="key">return</span> <span class="str">'【HTML】'</span><span class="word">;</span>
-                <span class="key">case</span> <span class="word">128</span><span class="str">:</span><span class="key">return</span> <span class="str">'【微信小程序】'</span><span class="word">;</span>
-                <span class="key">case</span> <span class="word">256</span><span class="str">:</span><span class="key">return</span> <span class="str">'【插件】'</span><span class="word">;</span>
-                <span class="key">case</span> <span class="word">512</span><span class="str">:</span><span class="key">return</span> <span class="str">'【其他】'</span><span class="word">;</span>
-            <span class="flower">}</span>
-        <span class="flower">}</span>
-        <span class="key">var</span> <span class="param">html</span> <span class="key">=</span> <span class="str">''</span>;
-        <span class="spe">$</span><span class="word">(</span><span class="str">'</span><span class="word">.</span><span class="key">doc</span><span class="str">'</span><span class="word">).</span><span class="method">append</span><span class="word">(</span><span class="param">html</span><span class="word">)</span>;
-        <span class="arrow">&lt;/</span><span class="tag">script</span><span class="arrow">></span><br>
-        </pre>
-
-    </div>
 </body>
 <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/angular.js/1.6.3/angular.min.js"></script>
