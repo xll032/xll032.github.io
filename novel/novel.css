@@ -1,6 +1,9 @@
+html,body{background:#e2e2e2;}
 pre{
     width:100%;
     white-space: pre-wrap;
     word-wrap: break-word;
     font-size:16px;
+    color:#333;
+
 }
