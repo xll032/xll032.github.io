@@ -2,4 +2,5 @@ pre{
     width:100%;
     white-space: pre-wrap;
     word-wrap: break-word;
+    font-size:16px;
 }
