@@ -595,7 +595,13 @@ var AllData = {
     "title":"Grunt 工具的安装、配置及使用",
     "type":32,
     "time":"2016/12/08 14:44",
-    "content":""
+    "content":
+      "<p>1、Grunt 的安装：</p>" +
+      "<p>Grunt 是基于 Node.js 使用的，Grunt 0.4.x 必须配合 Node.js >= 0.8.0版本使用</p>" +
+      "<p>确认安装好 Node.js 后可以开始安装 Grunt</p>" +
+      "<p>如果之前安装了老版本的 Grunt 的话，需要先将老版本卸载</p>" +
+      "卸载 Grunt 的命令：" +
+      "<pre class='cmd'>npm uninstall -g grunt</pre>"
   },
   "37":{
     "title":"",

@@ -1,4 +1,4 @@
-pre.code{
+pre.code,pre.cmd{
     background: #fdf6e3;
     white-space: pre-wrap;
     word-wrap: break-word;
@@ -69,4 +69,9 @@ pre.code span.flower{
 /*方括号 []*/
 pre.code span.rect{
     color: #1c8bd2;
+}
+/*cmd 风格*/
+pre.cmd{
+    background:#444;
+    color:#fff;
 }
