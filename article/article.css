@@ -22,3 +22,7 @@ p{
         min-width:0;
     }
 }
+pre{
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
