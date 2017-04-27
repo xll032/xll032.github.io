@@ -1,0 +1,6 @@
+{
+  "title":".remove()的元素找回",
+  "type":1,
+  "time":"2016/10/11 11:38",
+  "content": "<p>.remove() 方法的确将元素从 DOM 树中移除了，但该方法本身的返回值就是这个元素的信息，</p><p>即用以下方法可以找回删除的节点</p><pre class='code'><span class='key'>var</span> <span class='param'>ele</span> <span class='key'>=</span> <span class='spe'>$</span><span class='word'>(</span><span class='str'>'</span><span class='word'>.</span><span class='key'>removeEle</span><span class='str'>'</span><span class='word'>).</span><span class='method'>remove</span><span class='word'>();</span><span class='com'>//移除</span><br><span class='spe'>$</span><span class='word'>(</span><span class='str'>'</span><span class='word'>.</span><span class='key'>parent</span><span class='str'>'</span><span class='word'>).</span><span class='method'>append</span><span class='word'>(</span><span class='param'>ele</span><span class='word'>)</span><span class='com'>//重新添加</span></pre>"
+}

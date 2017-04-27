@@ -1,0 +1,6 @@
+{
+  "title":"My97datapicker（日历） {{缺一个demo}}",
+  "type":256,
+  "time":"2016/10/17 10:38",
+  "content":"<p>将整个插件包导入</p><p>默认不显示时间，只显示 \"yy-MM-dd\"</p><p>配置文件中修改配置：（下面为默认值）</p><p>dateFmt:\"yyyy-MM-dd\"；realDateFmt:\"yyyy-MM-dd\"；realTimeFmt:\"HH:mm:ss\"</p><p>在所有属性后面加上 \"HH-mm-ss\" 就会补全时间的显示（也可以使用HH:mm:ss）</p><p>时间范围设置：minDate:\"1960-01-10 00:00:00\"；maxDate:\"2100-12-31 23:59:59\"</p><p>其他的选项没什么大用。皮肤包可以设置</p>"
+}

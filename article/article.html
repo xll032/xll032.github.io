@@ -6,58 +6,19 @@
     <title>文章</title>
     <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="../public/code.css">
-    <style>
-        .container{
-            width:50%;
-            margin:0 auto;
-            min-width:600px;
-        }
-    </style>
+    <link rel="stylesheet" href="article.css">
 </head>
-<body>
-    <div class="container"> <a href="../index.html">返回</a><br><a id="up" href="javascript:void(0)">上一篇</a><br><a id="down" href="javascript:void(0)">下一篇</a></div>
+<body ng-app="article" ng-controller="aCtrl">
+    <div class="container">
+        <a href="../index.html">返回</a><br>
+        <a id="up" href="{{up}}">{{upText}}</a><br>
+        <a id="down" href="{{down}}">{{downText}}</a>
+        <header>{{title}}</header>
+        <div>分类：{{type}}</div>
+        <div>时间：{{time}}</div>
+        <article></article>
+    </div>
 </body>
-<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-<script src="../public/articleData.js"></script>
-<script>
-    function createContent(){
-        function switchType(type){
-            switch(type){
-                case 1:return 'jQuery';
-                case 2:return 'AngularJS';
-                case 4:return 'React';
-                case 8:return 'Vue';
-                case 16:return '原生JS';
-                case 32:return 'CSS';
-                case 64:return 'HTML';
-                case 128:return '微信小程序';
-                case 256:return '插件';
-                case 512:return '其他';
-            }
-        }
-        function codeStyle(type,content){
-            //console.log(content.match(/(&lt;)([\s\S]*)(\>?)/g));
-            return content;
-        }
-        var href = location.href;
-        var id = (href.substring(href.indexOf('?')+4))>>0;
-        var res = AllData[id];
-        id==1?$('#up').text('已经是第一篇'):$('#up').attr('href','article.html?id='+(id-1));
-        id==AllDataLength?$('#down').text('已经是最后一篇'):$('#down').attr('href','article.html?id='+(id+1));
-        if(res == void(0)){
-            document.write('404 不存在对应的页面');
-            return false
-        }
-        $('.container').append(
-                '<div>标题：'+res.title+'</div>' +
-                '<div>分类：'+switchType(res.type)+'</div>' +
-                '<div>时间：'+res.time+'</div>' +
-                '<div>内容：'+res.content+'</div>'
-               );
-        jQuery.fn.visible = function(){};
-    }
-    createContent();
-
-
-</script>
+<script src="https://cdn.bootcss.com/angular.js/1.6.3/angular.min.js"></script>
+<script src="article.js"></script>
 </html>

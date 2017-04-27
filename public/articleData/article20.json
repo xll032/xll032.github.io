@@ -1,0 +1,6 @@
+{
+  "title":"event.target 和 this 的区别",
+  "type":16,
+  "time":"2016/11/7 10:00",
+  "content":"<p>两者的共同点：</p><p>this 和 event.target 都是原生的方法</p><p>两者的不同点：</p><p>js中事件是会冒泡的，所以 this 的值会发生变化；但是 event.target 不会发生变化，它是直接接受事件的目标DOM元素</p>"
+}

@@ -1,0 +1,6 @@
+{
+  "title":"textarea 大小设置",
+  "type":64,
+  "time":"2016/12/01 15:00",
+  "content":"<p>textarea 默认情况下，大小可以由用户自己缩放。而随意缩放会导致布局混乱。这就需要对 textarea 做一些设置</p><p>CSS：</p><pre class='code'><span class='com'>/* 1、加了下面的属性就会禁止缩放，但是完全不能缩放用户体验也不好 */</span><br><span class='key'>textarea</span><span class='flower'>{</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class='fun'>resize</span><span class='word'>:</span><span class='key'>none</span><span class='word'>;</span><br><span class='flower'>}</span><br><span class='com'>/* 2、下面有一种方法可以模拟禁止缩放，仅禁止横向缩放（仅禁止 width 变化，height 变化一般不会影响布局） */</span><br><span class='key'>textarea</span><span class='flower'>{</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class='fun'>max-width</span><span class='word'>:</span><span class='key'>100%</span><span class='word'>;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class='fun'>width</span><span class='word'>:</span><span class='key'>1500px</span><span class='word'>;</span><span class='com'>/* 最小宽度定死后，设置一个很大的宽度，就不能横向缩放了 */</span><br><span class='flower'>}</span><br></pre>"
+}
