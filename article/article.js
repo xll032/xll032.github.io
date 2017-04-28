@@ -37,6 +37,8 @@ app.controller('aCtrl',function($scope,$http){
         document.getElementsByTagName('article')[0].innerHTML = $scope.content;
     });
     promise.catch(function(res){
-        console.error(res);
+        if(res.status =='404'){
+            window.location.href = '../public/404.html';
+        }
     });
 });
