@@ -19,10 +19,17 @@
         margin:0 auto;
         min-width:600px;
     }
+    ul,li{
+        list-style: none;
+        text-decoration: none;
+    }
 </style>
-<body>
+<body ng-app="index" ng-controller="indexCtrl">
     <article class="doc">
         <div>文档</div>
+        <ul>
+           <li ng-repeat="content in list"> <a href="article/article.html?id={{$index+1}}">{{switchType(content.type)}}{{content.title}}</a></li>
+        </ul>
     </article>
     <article>
         <div>小玩意儿</div>
@@ -32,9 +39,16 @@
 <script src="//cdn.bootcss.com/angular.js/1.6.3/angular.min.js"></script>
 <script src="public/articleData.js"></script>
 <script>
-    function createList(){
-        var a =1;
-        function switchType(type){
+    var app = angular.module('index',[]);
+    app.controller('indexCtrl',function($scope,$http){
+        var request = $http({
+            url:'public/articleData/articleList.json',
+            method:'get'
+        });
+        request.then(function(res){
+            $scope.list = res.data;
+        });
+        $scope.switchType = function(type){
             switch(type){
                 case 1:return '【jQuery】';
                 case 2:return '【AngularJS】';
@@ -47,18 +61,7 @@
                 case 256:return '【插件】';
                 case 512:return '【其他】';
             }
-        }
-        var html = '';
-        for(var i in AllData){
-            html += '<div><a href="javascript:void(0);">'+switchType(AllData[i].type)+AllData[i].title+'</a></div>';
-        }
-        $('.doc').append(html);
-        $('a').each(function(i,e){
-            $(e).on('click',function(){
-                location.href = 'article/article.html?id='+((i>>0)+1);
-            });
-        });
-    }
-    createList();
+        };
+    });
 </script>
 </html>
