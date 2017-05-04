@@ -30,7 +30,7 @@
         width:50%;
     }
     header a{
-        padding:10px;
+        padding:0 10px;
         color:#fff;
     }
     ul,li{
@@ -47,6 +47,9 @@
     .fa{
        font-size:1.2em;
     }
+    .main.container{
+        margin-top:50px;
+    }
 </style>
 <body ng-app="index" ng-controller="indexCtrl">
     <header>
@@ -56,7 +59,7 @@
             <div class="menu"><a href="index.html">主页</a><a href="">没想好</a></div>
         </div>
     </header>
-    <div class="container">
+    <div class="container main">
         <article class="doc">
             <div>文档</div>
             <ul>
@@ -90,12 +93,12 @@
                         opt = {
                             icon:'fa-bars', //支持fa图标库
                             content:[
-                              ['index.html','主页'],
-                              ['index.html','主页'],
-                              ['index.html','主页'],
-                              ['index.html','主页'],
-                              ['index.html','主页'],
-                              ['index.html','主页']
+                              ['index.html','<span class="fa fa-home"></span> 主页'],
+                              ['article/article.html?id=1','<span class="fa fa-file-text-o"></span> 文章'],
+                              ['javascript:void(0);','暂无'],
+                              ['javascript:void(0);','暂无'],
+                              ['javascript:void(0);','暂无'],
+                              ['javascript:void(0);','暂无']
                             ],//二维数组格式，第一项为链接地址，第二项为名称
                             bgColor:'#666',
                             width:208
@@ -120,7 +123,8 @@
                         display:'none',
                         position:'relative',
                         width:opt.width,
-                        right:-$(window).width()
+                        right:-$(window).width(),
+                        'padding-right':20
                     });
                     $mask.css({
                         height: $(window).height(),
