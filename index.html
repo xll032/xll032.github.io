@@ -102,6 +102,7 @@
                             bgColor:'#777',
                             width:208
                         };
+                    $.extend(opt,option);
                     if($(window).width()>768){
                         $parent.hide();
                     }
@@ -183,7 +184,7 @@
             })(jQuery);
         }
     })();
-    $.menuMobile({a:1,b:2});
+    $.menuMobile();
 
     /**************************************************************/
     var app = angular.module('index',[]);
