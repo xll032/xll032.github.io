@@ -100,9 +100,19 @@
                               ['javascript:void(0);','暂无'],
                               ['javascript:void(0);','暂无']
                             ],//二维数组格式，第一项为链接地址，第二项为名称
-                            bgColor:'#666',
+                            bgColor:'#777',
                             width:208
                         };
+                    if($(window).width()>768){
+                        $parent.hide();
+                    }
+                    $(window).scroll(function(){
+                        if($(window).width()>768){
+                            $parent.hide();
+                        }else{
+                            $parent.show();
+                        }
+                    });
                     var content ='';
                     for(var i = 0;i < opt.content.length;i++){
                         content += '<li><a href="'+opt.content[i][0]+'">'+opt.content[i][1]+'</a></li>';
