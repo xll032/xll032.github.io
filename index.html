@@ -22,7 +22,7 @@
         background:#666;
         line-height:50px;
         color:#fff;
-        position: relative;
+        position: fixed;
         z-index:10;
     }
     header .welcome,.menu{
@@ -97,29 +97,41 @@
                               ['index.html','主页'],
                               ['index.html','主页']
                             ],//二维数组格式，第一项为链接地址，第二项为名称
-                            bgColor:'#666'
+                            bgColor:'#666',
+                            width:208
                         };
                     var content ='';
                     for(var i = 0;i < opt.content.length;i++){
                         content += '<li><a href="'+opt.content[i][0]+'">'+opt.content[i][1]+'</a></li>';
                     }
                     content = '<ul id="cl-li" data-menu-show="false">'+content+'</ul>';
-                    $parent.html('<span id="cl-ul" class="fa '+opt.icon+'"></span>' + content);
+                    $parent.html('<div id="cl-mask"></div><span id="cl-ul" class="fa '+opt.icon+'"></span>' + content);
                     $parent.css({
                         'text-align':'right',
                         position:'relative'
                     });
                     var $ul = $('#cl-ul'),
-                        $li = $('#cl-li');
+                        $li = $('#cl-li'),
+                        $mask = $('#cl-mask');
                     $li.css({
                         padding:0,
                         height:$(window).height(),
                         background:opt.bgColor,
                         display:'none',
                         position:'relative',
+                        width:opt.width,
                         right:-$(window).width()
                     });
-                    $ul.off('click').on('click',function(){
+                    $mask.css({
+                        height: $(window).height(),
+                        position: 'absolute',
+                        width: $(window).width(),
+                        background: 'rgba(0,0,0,0.4)',
+                        left: -15,
+                        top: 50,
+                        display:'none'
+                    }).off('click').on('click', menuToggle);
+                    function menuToggle(){
                         function getCss(dis,time){
                             return {
                                 'transform':'translate3d(' + dis + 'px,0,0)',
@@ -131,18 +143,29 @@
                                 '-ms-transform':'translate3d(' + dis + 'px,0,0)',
                                 '-ms-transition':'all '+time+'ms'};
                         }
-                        var dis = -$(window).width()+15,time = 500;
+                        var dis = -(opt.width+15),time = 500;
                         if(menuShow){
                             menuShow = false;
                             if(!$li.data('menu-show')){
+                                $mask.fadeIn();
+                                $('body').css({
+                                    height: $(window).height(),
+                                    'overflow-y':'hidden'
+                                });
                                 $li.show().data('menu-show',true).css(getCss(dis,time));
                                 setTimeout(function(){menuShow = true;},time);
                             }else{
+                                $mask.fadeOut();
+                                $('body').css({
+                                    height:'auto',
+                                    'overflow-y':'auto'
+                                });
                                 $li.show().css(getCss(0,time)).data('menu-show',false);
                                 setTimeout(function(){menuShow = true;},time);
                             }
                         }
-                    });
+                    }
+                    $ul.off('click').on('click',menuToggle);
                 }
             })(jQuery);
         }
