@@ -122,10 +122,36 @@
                     $ul.off('click').on('click',function(){
                         if(menuShow){
                             menuShow = false;
-                            if($li.data('menu-show')== false){
-                                $li.show().stop().animate({right:-15},500,function(){menuShow = true;}).data('menu-show',true);
+                            if(!$li.data('menu-show')){
+                                //$li.show().stop().animate({right:-15},500,function(){menuShow = true;}).data('menu-show',true);
+                                $li.show().data('menu-show',true).css({
+                                        'transform':'translate3d('+(-$(window).width()+15)+'px,0,0)',
+                                        'transition':'all '+500+'ms',
+
+                                        '-webkit-transform':'translate3d('+(-$(window).width()+15)+'px,0,0)',
+                                        '-webkit-transition':'all '+500+'ms',
+
+                                        '-moz-transform':'translate3d('+(-$(window).width()+15)+'px,0,0)',
+                                        '-moz-transition':'all '+500+'ms',
+
+                                        '-ms-transform':'translate3d('+(-$(window).width()+15)+'px,0,0)',
+                                        '-ms-transition':'all '+500+'ms'});
+                                setTimeout(function(){menuShow = true;},500);
                             }else{
-                                $li.show().stop().animate({right:-$(window).width()},500,function(){menuShow = true;}).data('menu-show',false);
+                                //$li.show().stop().animate({right:-$(window).width()},500,function(){menuShow = true;}).data('menu-show',false);
+                                $li.show().css({
+                                    'transform':'translate3d(0,0,0)',
+                                    'transition':'all '+500+'ms',
+
+                                    '-webkit-transform':'translate3d(0,0,0)',
+                                    '-webkit-transition':'all '+500+'ms',
+
+                                    '-moz-transform':'translate3d(0,0,0)',
+                                    '-moz-transition':'all '+500+'ms',
+
+                                    '-ms-transform':'translate3d(0,0,0)',
+                                    '-ms-transition':'all '+500+'ms'}).data('menu-show',false);
+                                setTimeout(function(){menuShow = true;},500);
                             }
                         }
                     });
