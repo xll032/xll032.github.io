@@ -41,6 +41,7 @@
         header .menu{
             display: none;
             background:#666;
+            width:auto;
         }
     }
     .fa{
@@ -51,7 +52,7 @@
     <header>
         <div class="container">
             <div class="welcome">欢迎来到 龙 的技术博客</div>
-            <div data-cl-menu="true" style="text-align: right"></div>
+            <div data-cl-menu="true"></div>
             <div class="menu"><a href="index.html">主页</a><a href="">没想好</a></div>
         </div>
     </header>
@@ -105,8 +106,8 @@
                     content = '<ul id="cl-li" data-menu-show="false">'+content+'</ul>';
                     $parent.html('<span id="cl-ul" class="fa '+opt.icon+'"></span>' + content);
                     $parent.css({
-                        position:'relative',
-                        width:'50%'
+                        'text-align':'right',
+                        position:'relative'
                     });
                     var $ul = $('#cl-ul'),
                         $li = $('#cl-li');
