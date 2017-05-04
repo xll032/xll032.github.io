@@ -3,7 +3,7 @@
  * 使用方法： $.menuMobile(option);
  *   option 为可选参数，不传参数，使用默认颜色和样式。可传的参数列表如下：
  *   {icon:'', //只支持 fa 图标 如 fa-home
- *   content:[['linkAdd1','name1'],['linkAdd2','name2'],['linkAdd3','name3']],//列表链接数组
+ *   content:[['linkAdd1','name1'],['linkAdd2','name2'],['linkAdd3','name3']],//列表链接数组，默认是空的
  *   bgColor:''//背景颜色，16进制，rgb等均可
  *   width:''//菜单宽度，只能传入 px单位的数值，如 200
  *   }
@@ -24,14 +24,10 @@
                 var $parent = $('*[data-cl-menu="true"]'),
                     opt = {
                         icon:'fa-bars', //支持fa图标库
-                        content:[
+                        /*content:[
                             ['index.html','<span class="fa fa-home"></span> 主页'],
-                            ['article/article.html?id=1','<span class="fa fa-file-text-o"></span> 文章'],
-                            ['javascript:void(0);','暂无'],
-                            ['javascript:void(0);','暂无'],
-                            ['javascript:void(0);','暂无'],
-                            ['javascript:void(0);','暂无']
-                        ],//二维数组格式，第一项为链接地址，第二项为名称
+                            ['article/article.html?id=1','<span class="fa fa-file-text-o"></span> 文章']
+                        ],//二维数组格式，第一项为链接地址，第二项为名称*/
                         bgColor:'#777',
                         width:208
                     };
