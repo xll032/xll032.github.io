@@ -120,38 +120,26 @@
                         right:-$(window).width()
                     });
                     $ul.off('click').on('click',function(){
+                        function getCss(dis,time){
+                            return {
+                                'transform':'translate3d(' + dis + 'px,0,0)',
+                                'transition':'all '+time+'ms',
+                                '-webkit-transform':'translate3d(' + dis + 'px,0,0)',
+                                '-webkit-transition':'all '+time+'ms',
+                                '-moz-transform':'translate3d(' + dis + 'px,0,0)',
+                                '-moz-transition':'all '+time+'ms',
+                                '-ms-transform':'translate3d(' + dis + 'px,0,0)',
+                                '-ms-transition':'all '+time+'ms'};
+                        }
+                        var dis = -$(window).width()+15,time = 500;
                         if(menuShow){
                             menuShow = false;
                             if(!$li.data('menu-show')){
-                                //$li.show().stop().animate({right:-15},500,function(){menuShow = true;}).data('menu-show',true);
-                                $li.show().data('menu-show',true).css({
-                                        'transform':'translate3d('+(-$(window).width()+15)+'px,0,0)',
-                                        'transition':'all '+500+'ms',
-
-                                        '-webkit-transform':'translate3d('+(-$(window).width()+15)+'px,0,0)',
-                                        '-webkit-transition':'all '+500+'ms',
-
-                                        '-moz-transform':'translate3d('+(-$(window).width()+15)+'px,0,0)',
-                                        '-moz-transition':'all '+500+'ms',
-
-                                        '-ms-transform':'translate3d('+(-$(window).width()+15)+'px,0,0)',
-                                        '-ms-transition':'all '+500+'ms'});
-                                setTimeout(function(){menuShow = true;},500);
+                                $li.show().data('menu-show',true).css(getCss(dis,time));
+                                setTimeout(function(){menuShow = true;},time);
                             }else{
-                                //$li.show().stop().animate({right:-$(window).width()},500,function(){menuShow = true;}).data('menu-show',false);
-                                $li.show().css({
-                                    'transform':'translate3d(0,0,0)',
-                                    'transition':'all '+500+'ms',
-
-                                    '-webkit-transform':'translate3d(0,0,0)',
-                                    '-webkit-transition':'all '+500+'ms',
-
-                                    '-moz-transform':'translate3d(0,0,0)',
-                                    '-moz-transition':'all '+500+'ms',
-
-                                    '-ms-transform':'translate3d(0,0,0)',
-                                    '-ms-transition':'all '+500+'ms'}).data('menu-show',false);
-                                setTimeout(function(){menuShow = true;},500);
+                                $li.show().css(getCss(0,time)).data('menu-show',false);
+                                setTimeout(function(){menuShow = true;},time);
                             }
                         }
                     });
