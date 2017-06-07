@@ -26,7 +26,7 @@
         z-index:10;
     }
     header .welcome,.menu{
-        float:left;
+        display:inline-block;
     }
     header a{
         padding:0 10px;
@@ -49,12 +49,47 @@
     .main.container{
         margin-top:50px;
     }
+    .container{
+        position:static;
+    }
+    /*菜单css*/
+    #cl-mask{
+        position:absolute;
+        width:100%;
+        background:rgba(0,0,0,0.4);
+        left: 0;
+        top: 50px;
+    }
+    #cl-menu{
+        display: inline-block;
+    }
+    .cl-mask-show{
+        height:1000px;
+    }
+    #cl-menu li{
+        padding:0 20px 0 0;
+        height:1000px;
+        background:#777;
+        position:absolute;
+        width:208px;
+    }
 </style>
 <body ng-app="index" ng-controller="indexCtrl">
+
     <header>
         <div class="container">
+            <div id="cl-menu">
+                <span class="fa fa-bars"></span>
+                <ul>
+                    <li>1233</li>
+                    <li>1233</li>
+                    <li>1233</li>
+                    <li>1233</li>
+                    <li>1233</li>
+                    <li>1233</li>
+                </ul>
+            </div>
             <div class="welcome">欢迎来到 龙 的技术博客</div>
-            <div data-cl-menu="true"></div>
             <div class="menu"><a href="index.html">主页</a><a href="">没想好</a></div>
         </div>
     </header>
@@ -69,12 +104,12 @@
             <div>小玩意儿</div>
         </article>
     </div>
-
+    <div id="cl-mask"></div>
 </body>
 <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/angular.js/1.6.3/angular.min.js"></script>
 <script src="public/articleData.js"></script>
-<script src="plugin/mobileMenu/mobileMenu.min.js"></script>
+<script src="plugin/mobileMenu/mobileMenu.js"></script>
 <script>
     var app = angular.module('index',[]);
     app.controller('indexCtrl',function($scope,$http){
