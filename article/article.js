@@ -1,4 +1,4 @@
-var len = 40;
+var len = 100;
 var app = angular.module('article',[]);
 app.controller('aCtrl',function($scope,$http){
     function getId(){

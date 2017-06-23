@@ -1,6 +1,6 @@
 {
-  "title":"RequireJS 简单介绍",
-  "type":256,
-  "time":"2016/12/14 10:51",
-  "content":""
+  "title":"require.js 简单用法介绍",
+  "type":512,
+  "time":"2016/12/14 13:51",
+  "content":"<p>使用 require.js 时的写法及引用：</p><p>JS:</p><pre class='code'><span class='spe'>define</span><span class='word'>(</span><span class='rect'>[</span><span class='str'>'jquery'</span><span class='rect'>]</span><span class='word'>,</span><span class='key'>function</span><span class='word'>($)</span><span class='flower'>{</span><br><span class='com'>&nbsp;&nbsp;&nbsp;&nbsp;/*内部函数*/</span><br><span class='key'>&nbsp;&nbsp;&nbsp;&nbsp;var </span><span class='param'>myFun </span><span class='key'>= </span><span class='key'>function</span><span class='word'>()</span><span class='flower'>{</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class='com'>// content</span><br><span class='flower'>&nbsp;&nbsp;&nbsp;&nbsp;}</span><span class='word'>;</span><br><span class='flower'>}</span></pre><p>HTML 中引用上述 JS 文件（假定文件名为 demo.js），</p><pre class='code'><span class='arrow'><</span><span class='tag'>script</span><span class='arrow'>></span><br><span class='method'>&nbsp;&nbsp;&nbsp;&nbsp;require</span><span class='word'>(</span><span class='rect'>[</span><span class='str'>'demo.js'</span><span class='rect'>]</span><span class='word'>,</span><span class='key'>function</span><span class='word'>(myFun)</span><span class='flower'>{</span><br><span class='fun'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;myFun</span><span class='word'>();</span><br><span class='flower'>&nbsp;&nbsp;&nbsp;&nbsp;}</span><br><span class='arrow'>&lt;/</span><span class='tag'>script</span><span class='arrow'>></span></pre><p>在 js 中写 define 的方法可以实现 js 的按需加载，而且这个效果只会在第一次未加载的时候去引用，引用之后就会不再加了。</p><p>Require.js 可以设置配置文件，将文件路径配置进去后，可以使用定义好的名字去引用 js，简化内容。</p><p></p><p></p>"
 }

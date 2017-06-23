@@ -61,7 +61,8 @@
         top: 50px;
     }
     #cl-menu{
-        display: inline-block;
+        /*display: inline-block;*/
+        display:none;
     }
     .cl-mask-show{
         height:1000px;
@@ -99,9 +100,6 @@
             <ul>
                 <li ng-repeat="content in list"> <a href="article/article.html?id={{$index+1}}">{{switchType(content.type)}}{{content.title}}</a></li>
             </ul>
-        </article>
-        <article>
-            <div>小玩意儿</div>
         </article>
     </div>
     <div id="cl-mask"></div>
