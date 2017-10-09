@@ -1,6 +1,0 @@
-{
-  "title":"cursor 属性值汇总",
-  "type":32,
-  "time":"2016/10/17 15:47",
-  "content":"<p>cursor 有很多种属性（这里列出所有的）：</p><table class='table table-responsive table-striped'><tbody><tr><td>crosshair</td><td>十字准心（切图的感觉）</td></tr><tr><td>pointer/hand</td><td>手（ie5只认hand）</td></tr><tr><td>wait</td><td>等待/沙漏（一般为一块表或者一个沙漏）</td></tr><tr><td>help</td><td>帮助（一般为问号或者气球）</td></tr><tr><td>no-drop</td><td>无法释放（chrome下是禁止的标志，和not-allowed一样）</td></tr><tr><td>text</td><td>文字/编辑</td></tr><tr><td>move</td><td>可移动对象</td></tr><tr><td>n-resize</td><td>向上改变大小（北，north  上下箭头）</td></tr><tr><td>s-resize</td><td>向下改变大小（南，south  上下箭头）</td></tr><tr><td>e-resize</td><td>向右改变大小（东，east   左右箭头）</td></tr><tr><td>w-resize</td><td>向左改变大小（西，west   左右箭头）</td></tr><tr><td>ne-resize</td><td>向上右改变大小（north east  右斜箭头）</td></tr><tr><td>sw-resize</td><td>向下左改变大小（south west  右斜箭头）</td></tr><tr><td>nw-resize</td><td>向上左改变大小（north west  左斜箭头）</td></tr><tr><td>se-resize</td><td>向下右改变大小（south east  左斜箭头）</td></tr><tr><td>auto</td><td>自动（浏览器设置一个游标，效果不确定）</td></tr><tr><td>not-allowed</td><td>禁止</td></tr><tr><td>progress</td><td>处理中（鼠标边上一个小沙漏）</td></tr><tr><td>default</td><td>系统默认</td></tr><tr><td>url(\"#\")</td><td>自定义（可用动画，文件格式必须是.cur或.ani）</td></tr></tbody></table>"
-}

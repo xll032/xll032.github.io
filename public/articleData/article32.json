@@ -1,6 +1,0 @@
-{
-  "title":"pre 标签换行",
-  "type":64,
-  "time":"2016/12/5 15:07",
-  "content":"<p>内容超出 pre 宽度时，自动换行。默认是不换行的</p><pre class='code'><span class='key'>pre</span><span class='flower'>{</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class='fun'>white-space</span><span class='word'>:</span><span class='str'>pre-wrap</span><span class='word'>;</span><br>&nbsp;&nbsp;&nbsp;&nbsp;<span class='fun'>word-wrap</span><span class='word'>:</span><span class='str'>break-word</span><span class='word'>;</span><br><span class='flower'>}</span></pre>"
-}

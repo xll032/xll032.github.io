@@ -1,6 +1,0 @@
-{
-  "title":"地址栏转码",
-  "type":16,
-  "time":"2016/11/1 15:09",
-  "content":"<p>在 IE 浏览器上使用的是 utf-8 格式的地址栏，中文内容无法被识别，显示的格式为：http://www.xxxx.com?title= %E7%AC%AC21%E5%B1%8A%E4%B8%89%E6%98%9F%E8%BD%A6%E9%99%A9%E6%9D%AF%E5%8D%8A%E5%86%B3%E8%B5%9B%E7 %AC%AC%E4%B8%89%E5%B1%80&id=8429&PB=%E6%9F%AF%E6%B4%81&BR=%E4%B9%9D%E6%AE%B5&PW=%E6%9D%8E%E4%B8 %96%E7%9F%B3&WR=%E4%B9%9D%E6%AE%B5</p><p>而在现代浏览器上会自动进行转码，可以识别中文内容，会显示成：http://www.xxxx.com?title=第21届三星车险杯半决赛第三局&id=8429&PB=柯洁&BR=九段&PW=李世石&WR=九段</p><p>转码的使用方法如下：</p><p>JS：</p><pre class='code'><span class='method'>encode</span><span class='word'>(</span><span class='str'>'url'<span class='word'>);</span><span class='com'> // 可能会需要两次转码，视情况而定。encode(encode('url'))</span></pre><p>转码的方法无需对 IE 做判断，因为现代浏览器会自动识别再转回来。</p><p>转码正确的格式应该是： %两个字符（英文或数字）%两个字符（英文或数字）…… 应该是十六进制吧</p>"
-}

@@ -1,6 +1,0 @@
-{
-  "title":"ios网页取消自动识别手机号码",
-  "type":64,
-  "time":"2016/9/14 14:28",
-  "content":"<p>ios下会自动将10、11位号码识别，点击后会进入到拨号，并且颜色会变黑</p><p>注：该问题仅在iPhone手机上运行web时才会出现，PC端无法检查到该问题。添加下列标签，可完美解决该问题</p><pre class='code'><span class='arrow'>&lt;</span><span class='tag'>meta</span> <span class='attr'>name=</span><span class='str'>\"format-detection\"</span> <span class='attr'>content=</span><span class='str'>\"telephone=no\"</span><span class='arrow'>/></span></pre>"
-}

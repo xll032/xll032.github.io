@@ -1,6 +1,0 @@
-{
-  "title":"false、0、undefined、null 空字符串比较",
-  "type":16,
-  "time":"2016/12/14 12:40",
-  "content":"<p>某次写小插件的时候，发现 false == \"\" 结果是 true。之前一直没有注意过，在整理一下这些比较特殊的值</p><p>下面的表格列出了它们的类型和值</p><table class='table table-striped'><thead><tr><td>对象</td><td>类型</td><td>值</td></tr></thead><tbody><tr><td>false</td><td>Boolean</td><td>假值</td></tr><tr><td>0</td><td>Number</td><td>假值</td></tr><tr><td>\"\"</td><td>String</td><td>假值</td></tr><tr><td>null</td><td>Object</td><td>空值</td></tr><tr><td>undefined</td><td>Undefined</td><td>空值</td></tr></tbody></table><p>说明：</p><p>1、假值之间相等，空值之间相等</p><p>2、假值是一个有效的对象，可以用toString等类型相关的方法，而空值不行。空值使用这种方法会抛出异常</p><p>3、空值不能使用toString方法，但是可以使用String方法构造（构造后就变成了相应的字符串）</p>"
-}

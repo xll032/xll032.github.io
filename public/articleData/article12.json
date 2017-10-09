@@ -1,6 +1,0 @@
-{
-  "title":"height 百分比",
-  "type":32,
-  "time":"2016/10/17 9:56",
-  "content":"<p>要使以下属性能够生效，需在父级上设置一个高度，必须是一个数值。</p><p>CSS：</p><pre class='code'><span class='key'>.parent div</span><span class='flower'>{</span><span class='fun'>height</span><span class='word'>:</span><span class='str'>100%</span><span class='flower'>}</span><br><span class='key'>.parent</span><span class='flower'>{</span><span class='fun'>height</span><span class='word'>:</span><span class='str'>200px;</span><span class='flower'>}</span></pre><p>否则 100% 得到的是0 。事实上width属性也是这样的，只不过在没有设置的情况下，宽度是容器宽度（body宽度默认是屏幕宽度），而高度默认都是0</p>"
-}

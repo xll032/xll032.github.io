@@ -1,6 +1,0 @@
-{
-  "title":"input、textarea等获焦",
-  "type":16,
-  "time":"2016/10/17 10:38",
-  "content":"<p>使用 .focus()即可，原生JS 和 jQuery 都直接支持</p>"
-}

@@ -1,1 +1,0 @@
-function p(a,b,c){var h='';for(var i=0;i< c.length;i++){h+='<a href="'+a+'/'+a+'-'+i+'.html">'+c[i]+'</a>';}document.getElementsByTagName('body')[0].innerHTML='<h4>'+b+'</h4>'+h;}
