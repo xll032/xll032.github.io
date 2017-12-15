@@ -1,4 +1,4 @@
-# 个人博客首页
+# 个人博客 - 介绍
 
 >#### 使用技术： vue2 + vuex + webpack2 +element-ui1 + ~~font-awesome~~（已去除）
 
