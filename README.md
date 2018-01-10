@@ -82,3 +82,26 @@
 * 升级 element-ui 至版本 2.0.11
 * 升级 vue 至版本 2.5.13
 * 修复了升级带来的代码兼容问题
+* 根据 element-ui 文档按需引入组件
+```javascript
+npm install babel-plugin-component -D
+```
+修改 .babelrc 文件：
+```javascript
+{
+  "presets": [
+    ["es2015", { "modules": false }]
+  ],
+  "plugins": [["component", [
+    {
+      "libraryName": "element-ui",
+      "styleLibraryName": "theme-chalk"
+    }
+  ]]]
+}
+```
+然后引入：
+```javascript
+import { Button, Select } from 'element-ui';
+ Vue.use(Button);
+```
