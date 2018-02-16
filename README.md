@@ -1,6 +1,6 @@
 ## 个人博客 - 介绍
 
->**使用技术： vue2 + vuex + webpack2 +element-ui1 + ~~font-awesome~~（已去除）**
+>**使用技术： vue2 + +element-ui + sass + ~~font-awesome~~（已去除）**
 
 >**博客地址： [个人博客 - 龙](https://xll032.github.io "https://xll032.github.io")**
 ###### 注：源码保存在本地不公开，如有需要可联系QQ：376013043 （请说明意图，谢谢）
@@ -20,9 +20,13 @@
 * 使用较多的 css3 动画，采用样式渐变以优化视觉效果
 
 
-**回到顶部效果优化 2017/07/06**
+**回到顶部效果优化并组件化 2017/07/06**
 * 速度优化
 * 识别鼠标滚轮动作，可以立即阻止自动滚动的行为
+* 组件化，使用如下方式引入即可
+```html
+<go-top></go-top>
+```
 
 
 **博客数据整合 2017/07/12**
@@ -104,4 +108,16 @@ npm install babel-plugin-component -D
 ```javascript
 import { Button, Select } from 'element-ui';
  Vue.use(Button);
+```
+
+
+**使用 sass 管理样式并优化界面样式 2018/02/08**
+* 整合样式，使样式文件结构清晰，便于阅读和管理
+
+
+**头部、尾部组件化 2018/02/14**
+* 组件化头部、尾部，便于代码区分管理，使用如下方式引入即可
+```html
+<Header></Header>
+<Bottom></Bottom>
 ```
