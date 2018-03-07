@@ -1,3 +1,55 @@
-<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,height=device-height,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1,target-densitydpi=device-dpi"><meta name=format-detection content="telephone=no"><meta name=format-detection content="email=no"><title>个人博客 by 龙</title><style>#loading-div{
-            text-align:center;
-        }</style><link href=/static/css/app.2982097bb7b9ca3e0c96f35f8a50890f.css rel=stylesheet></head><body><div id=App><div id=loading-div><p>拼命加载中</p></div></div><script type=text/javascript src=/static/js/manifest.7729a971dcde8bc783cf.js></script><script type=text/javascript src=/static/js/vendor.40ade8e7504f74b98640.js></script><script type=text/javascript src=/static/js/app.4d7fbfb1c4eb33e310e9.js></script></body></html>
+<!DOCTYPE html><html><head><link rel=icon href=/static/img/ms.ico><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1"><meta name=renderer content=webkit><meta content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0" name=viewport><title>围棋协会管理系统</title><style>body{min-width:998px;}
+          html{
+              overflow: hidden;
+              background:#eff2f7;
+              height:100%;
+          }
+          .count_load{
+              font-size:36px;
+              text-align:center;
+              color:#1281d4;
+              margin-top:200px;
+              padding-top:100px;
+              font-family:'楷体',sans-serif
+          }
+          h4.count_load{
+              color:#999;
+              font-size:16px;
+              padding-top:30px;
+              margin-top:10px;
+          }</style><script>const initial = {
+                checkNavigation(){
+                    if(navigator.userAgent.indexOf('MSIE 7.') !== -1 || navigator.userAgent.indexOf('MSIE 8.') !== -1 || navigator.userAgent.indexOf('MSIE 9.') !== -1 ){
+                        setTimeout(function(){
+                            alert('IE内核浏览器无法访问，请使用现代浏览器！');
+                        },2000);
+                    }
+                },
+                chooseIconAndName(){
+                    const host = window.location.host;
+                    switch(true){
+                        case host.includes('hb.ms'):
+                            this.changeName('河北');
+                            this.changeIcon('');
+                            break;
+                        default :
+                            this.changeName('浙江');
+                            this.changeIcon('/static/img/ms.ico');
+                            break;
+                    }
+                },
+                changeName(province){
+                   const _title = document.getElementsByTagName('title')[0];
+                   _title.innerText = province + '围棋协会管理系统';
+                },
+                changeIcon(href){
+                    const _link = document.getElementsByTagName('link')[0];
+                    _link.setAttribute('href',href);
+                },
+                init(){
+                    this.checkNavigation();
+                    this.chooseIconAndName();
+                }
+            };
+
+            initial.init();</script><link href=static/css/app.a249976007b6d7661905b5c8a3938a50.css rel=stylesheet></head><body><div id=app><h1 class=count_load>拼命加载中</h1><h4 class=count_load>推荐使用：火狐（FireFox）浏览器、谷歌（Chrome）浏览器等</h4></div><script type=text/javascript src=static/js/manifest.3011629afd8b93c21b0a.js></script><script type=text/javascript src=static/js/vendor.c09b0a0fc34bd7cc8932.js></script><script type=text/javascript src=static/js/app.24edd2f64160b301be4d.js></script></body></html>
