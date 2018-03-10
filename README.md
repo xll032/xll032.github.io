@@ -61,13 +61,13 @@
 * 与回到顶部（go-top）按钮类似，组件化后使用更加灵活，多处使用可以统一修改显示的效果，方便管理和修改
 * 组件化之后这样写即可：
 ```html
-<my-blog v-for  = "item in $store.state.currentBlogData"
-         :title = "item.title"
-         :url   = "item.url"
-         :key   = "item.url"
-         :time  = "item.time"
-         :tags  = "item.tags"
-         :brief = "item.brief"></my-blog>
+<my-blog v-for="item in $store.state.currentBlogData"
+         :title="item.title"
+         :url="item.url"
+         :key="item.url"
+         :time="item.time"
+         :tags="item.tags"
+         :brief="item.brief"></my-blog>
 ```
 
 
@@ -94,7 +94,7 @@ npm install babel-plugin-component -D
 ```javascript
 {
   "presets": [
-    ["es2015", { "modules": false }]
+    ["es2015", {"modules": false}]
   ],
   "plugins": [["component", [
     {
@@ -106,7 +106,7 @@ npm install babel-plugin-component -D
 ```
 然后引入：
 ```javascript
-import { Button, Select } from 'element-ui';
+import {Button, Select} from 'element-ui';
  Vue.use(Button);
 ```
 
